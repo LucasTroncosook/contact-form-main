@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Contact form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+  <section class="section-container">
+    <section class="container-message" id="modal">
+      <section class="container-message-container">
+        <div>
+          <img src="./assets/images/icon-success-check.svg" alt="icon-success-check">
+          <span>
+            Message Sent!
+          </span> 
+        </div>
+        <span>Thanks for completing the form. We'll be in touch soon!</span>
+      </section>
+    </section>
+    <section class="container">
+      <h1>Contact Us</h1>
+      <form id="form">
+        <section class="First-Last-Name">
+          <label>
+            <legend>First Name <span>*</span></legend>
+            <input type="text">
+            <span>This field is required</span>
+          </label>
+          <label>
+            <legend>Last Name <span>*</span></legend>
+            <input type="text">
+            <span>This field is required</span>
+          </label>
+        </section>
+        <section class="Email">
+          <label>
+            <legend>Email Address <span>*</span></legend>
+            <input type="email">
+            <span>Please enter a valid email address</span>
+          </label>
+        </section>
+        <section class="Query-Type">
+          <legend>Query Type <span>*</span></legend>
+          <label>
+            <label for="">
+              <input type="checkbox">
+              <span>General Enquiry</span>
+            </label>
+            <label for="">
+              <input type="checkbox">
+              <span>Support Request</span>
+            </label>
+          </label>
+          <span class="Query-Type-span">Please select a query type</span>
+        </section>
+        <section class="Message">
+          <label>
+            <legend>Message <span>*</span></legend>
+            <textarea></textarea>
+            <span>This field is required</span>
+          </label>
+        </section>
+        <section class="Team">
+          <label>
+            <div>
+              <input type="checkbox">
+              <span>I consent to being contacted by the team</span>
+            </div>
+            <span>To submit this form, please consent to being contacted</span>
+          </label>
+        </section>
+
+        <input type="submit" value="Submit" id="submit">
+      </form>
+    </section>
+  </section>
+  <!--
+  
+  
+   -->
+  
+  <script src="./js/correo.js"></script>
+</body>
+</html>

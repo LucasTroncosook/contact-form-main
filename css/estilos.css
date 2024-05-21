@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /* Primary */
+    --Light-Green: hsl(148, 38%, 91%);
+    --Green: hsl(169, 82%, 27%);
+    --Red: hsl(0, 66%, 56%);
+
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Medium-Grey: hsl(186, 15%, 59%);
+    --Dark-Grey: hsl(187, 24%, 22%);
+
+    --Karla: 'Karla';
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: var(--Light-Green);
+    font-family: var(--Karla);
+}
+
+.section-container{
+    width: 100%;
+    min-width: 320px;
+    max-width: 700px;
+    height: auto;
+    padding-block: 20px;
+    background-color: var(--White);
+    border-radius: 10px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+    box-shadow: 1px 3px 10px var(--Dark-Grey);
+    position: relative;
+    & .container-message{
+        position: absolute;
+        width: 60%;
+        height: 100px;
+        border-radius: 5px;
+        background-color: var(--Dark-Grey);
+        color: var(--White);
+        top: -10px;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%,-50%);
+        transition: all .2s ease;
+        & .container-message-container{
+            width: 90%;
+            margin: 0 auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            & div{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            & > span{
+                font-size: clamp(.5rem, 2vw, .9rem);
+            }
+        }
+    }
+    & .container{
+        width: 90%;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        @media(width <= 550px){
+            &{
+                gap: 20px;
+            }
+        }
+        & h1{
+            font-size: 1.7rem;
+            color: var(--Dark-Grey);
+        }
+        & form{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            gap: 5px;
+            flex-direction: column;
+            & .First-Last-Name,
+            & .Email{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                @media(width <= 550px){
+                    &{
+                        flex-direction: column;
+                    }
+                }
+                & label{
+                    width: 100%;
+                    min-width: 250px;
+                    max-width: 302.2px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    @media(width <= 550px){
+                        &{
+                            max-width: 100%;
+                        }
+                    }
+                    & legend{
+                        font-size: .95rem;
+                        font-weight: 500;
+                        & span{
+                            color: var(--Green);
+                            font-weight: bold;
+                        }
+                    }
+                    & input{
+                        height: 40px;
+                        border: .1px solid var(--Green);
+                        border-radius: 5px;
+                        padding-left: 30px;
+                        &:focus-visible{
+                            outline-color: var(--Green);
+                        }
+                    }
+                    & > span{
+                        font-size: .9rem;
+                        color: var(--Red);
+                        opacity: 0;
+                    }
+                }
+            }
+            & .Email{
+                & label{
+                    width: 100%;
+                    max-width: 100%;
+                    & input{
+                        width: 100%;
+                    }
+                }
+            }
+            & .Query-Type{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                & legend{
+                    font-size: .95rem;
+                    font-weight: 500;
+                    & span{
+                        color: var(--Green);
+                        font-weight: bold;
+                    }
+                }
+                & > span{
+                    font-size: .9rem;
+                    color: var(--Red);
+                    opacity: 0;
+                }
+                & > label{
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    row-gap: 20px;
+                    @media(width <= 550px){
+                        &{
+                            flex-direction: column;
+                        }
+                    }
+                    & > label{
+                        width: 100%;
+                        min-width: 250px;
+                        max-width: 302.2px;
+                        height: 40px;
+                        border: 1px solid var(--Green);
+                        border-radius: 5px;
+                        display: flex;
+                        align-items: center;
+                        padding-left: 30px;
+                        gap: 10px;
+                        @media(width <= 550px){
+                            &{
+                                max-width: 100%;
+                            }
+                        }
+                        & input[type="checkbox"]{
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            border: .1px solid var(--Green);
+                            border-radius: 50%;
+                            width: 20px;
+                            height: 20px;
+                            position: relative;
+                        }
+                        & span{
+                            font-size: .9rem;
+                            font-weight: 500;       
+                        }
+                        & input[type="checkbox"]:checked::after{
+                            content: "";
+                            position: absolute;
+                            width: 12px;
+                            height: 12px;
+                            background-color: var(--Green);
+                            border-radius: 50%;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                }
+            }
+            & .Message{
+                width: 100%;
+                & label{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    & legend{
+                        font-size: .95rem;
+                        font-weight: 500;
+                        & span{
+                            color: var(--Green);
+                            font-weight: bold;
+                        }
+                    }
+                    & textarea{
+                        resize: none;
+                        width: 100%;
+                        height: 100px;
+                        border-radius: 8px;
+                        padding-left: 30px;
+                        padding-top: 10px;
+                        border: 1px solid var(--Green);
+                        font-weight: 600;
+                        font-size: 1.05rem;
+                        &:focus-visible{
+                            outline-color: var(--Green);
+                        }
+                    }
+                    & > span{
+                        font-size: .9rem;
+                        color: var(--Red);
+                        opacity: 0;
+                    }
+                }
+            }
+            & .Team{
+                width: 100%;
+                margin-top: 5px;
+                & label{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    & div{
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        & input[type="checkbox"]{
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            appearance: none;
+                            border: .1px solid var(--Green);
+                            width: 20px;
+                            height: 20px;
+                            position: relative;
+                        }
+                        & input[type="checkbox"]:checked::after{
+                            content: "";
+                            position: absolute;
+                            width: 20px;
+                            height: 20px;
+                            background-image: url('../assets/images/icon-checkbox-check.svg');
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%,-50%);
+                        }
+                    }
+                    & > span{
+                        font-size: .9rem;
+                        color: var(--Red);
+                        opacity: 0;
+                    }
+                }
+            }
+            & input[type="submit"]{
+                background-color: var(--Green);
+                height: 40px;
+                border: none;
+                border-radius: 5px;
+                color: var(--Light-Green);
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+input[type="text"],
+input[type="email"]{
+    font-weight: 600;
+}
